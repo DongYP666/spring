@@ -32,7 +32,6 @@
         <artifactId>spring-core</artifactId>
         <version>4.1.4.RELEASE</version>
       </dependency>
-
       <!-- Spring Context -->
       <dependency>
         <groupId>org.springframework</groupId>
@@ -40,11 +39,11 @@
         <version>4.1.4.RELEASE</version>
       </dependency>
 
-      <!-- Spring JDBC -->
+      <!-- Hibernate -->
       <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-jdbc</artifactId>
-        <version>5.0.4.RELEASE</version>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.2.15.Final</version>
       </dependency>
 
       <!-- Mysql Driver -->
