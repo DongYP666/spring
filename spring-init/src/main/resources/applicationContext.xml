@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+    <bean id="springHelloWorld" class="simple.SpringHelloWorld"></bean><!--将这个bean加入到spring的ioc容器-->
+    <bean id="strutsHelloWorld" class="simple.StrutsHelloWorld"></bean>
+
+    <bean id="helloWorldService" class="simple.HelloWorldService">
+        <property name="helloWorld" ref="springHelloWorld"></property>
+    </bean>
+</beans>
