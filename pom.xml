@@ -15,6 +15,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
@@ -38,14 +41,26 @@
         <artifactId>spring-context</artifactId>
         <version>4.1.4.RELEASE</version>
       </dependency>
+      <!-- Spring ORM -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>4.1.4.RELEASE</version>
+      </dependency>
 
-      <!-- Hibernate -->
+      <!-- Hibernate Core -->
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-core</artifactId>
-        <version>5.2.15.Final</version>
+        <version>4.3.11.Final</version>
       </dependency>
 
+      <!-- c3p0 -->
+      <dependency>
+        <groupId>com.mchange</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.5.2</version>
+      </dependency>
       <!-- Mysql Driver -->
       <dependency>
         <groupId>mysql</groupId>

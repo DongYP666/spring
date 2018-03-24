@@ -14,7 +14,9 @@ import java.util.List;
  */
 public interface IUserDao {
 
-    void save(User user);
+    void insert(User user);
+
+    void update(User user);
 
     List<User> findAll();
 

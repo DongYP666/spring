@@ -24,11 +24,14 @@ public class UserController {
         UserService service = context.getBean(UserService.class);
 
 //        User user = new User();
-//        user.setUsername("aaaaaaaaa？？？？");
-//        user.setPassword("bbbbbbbbb？？？？");
+//        user.setUsername("dongyipeng");
+//        user.setPassword("19940610");
 //        user.setEmail("727247012@qq.com");
 //        user.setBirthday(new Date());
-//        service.save(user);
+//        service.insert(user);
+
+//        user.setId(1);
+//        service.update(user);
 
 //        List<User> list = service.findAll();
 //        list.stream().forEach(user -> {

@@ -9,7 +9,7 @@
         <module name="spring-init" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="spring" target="1.8" />
       <module name="spring-init" target="1.8" />
     </bytecodeTargetLevel>

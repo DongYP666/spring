@@ -19,8 +19,12 @@ public class UserService {
     @Autowired
     private IUserDao userDao;
 
-    public void save(User user) {
-        userDao.save(user);
+    public void insert(User user) {
+        userDao.insert(user);
+    }
+
+    public void update(User user) {
+        userDao.update(user);
     }
 
     public List<User> findAll() {

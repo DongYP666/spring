@@ -2,12 +2,11 @@ package com.ecworking.init.dao.impl;
 
 import com.ecworking.init.dao.IUserDao;
 import com.ecworking.init.entity.User;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,42 +18,34 @@ import java.util.List;
  * @Author by dongyp
  * @date on 2018/3/22
  */
+@Transactional
 public class UserDaoDaoImpl implements IUserDao {
 
-    //获取和当前线程绑定的Seesion
-    private Session getSession() {
-        //获取加载配置管理类
-        Configuration configuration = new Configuration();
+    @Autowired
+    private SessionFactory sessionFactory;
 
-        //不给参数就默认加载hibernate.cfg.xml文件，
-        configuration.configure();
-
-        //创建Session工厂对象
-        SessionFactory factory = configuration.buildSessionFactory();
-
-        return factory.openSession();
+    /**
+     * 获取与当前线程绑定的session
+     * @return
+     */
+    private Session getSession(){
+        return sessionFactory.getCurrentSession();
     }
 
     @Override
-    public void save(User user) {
-        //获取加载配置管理类
-        Configuration configuration = new Configuration();
-        //不给参数就默认加载hibernate.cfg.xml文件，
-        configuration.configure();
-        //创建Session工厂对象
-        SessionFactory factory = configuration.buildSessionFactory();
-        //得到Session对象
-        Session session = factory.openSession();
-        //使用Hibernate操作数据库，都要开启事务,得到事务对象
-        Transaction transaction = session.getTransaction();
-        //开启事务
-        transaction.begin();
-        //把对象添加到数据库中
-        session.save(user);
-        //提交事务
-        transaction.commit();
-        //关闭Session
-        session.close();
+    public void insert(User user) {
+        getSession().save(user);
+    }
+
+    public void update(User user){
+        String hql = "update User set username=?,password=?,email=?,birthday=? where id=?";
+        Query query = getSession().createQuery(hql)
+                .setString(0,user.getUsername())
+                .setString(1,user.getPassword())
+                .setString(2,user.getEmail())
+                .setDate(3,user.getBirthday())
+                .setLong(4,user.getId());
+        query.executeUpdate();
     }
 
     @Override
@@ -68,7 +59,7 @@ public class UserDaoDaoImpl implements IUserDao {
     @Override
     public User findById(long id) {
         String hql = "from User where id=?";
-        Query query=getSession().createQuery(hql).setParameter(0, id);
+        Query query=getSession().createQuery(hql).setLong(0, id);
         User result = (User)query.uniqueResult();
         return result;
     }
@@ -76,7 +67,7 @@ public class UserDaoDaoImpl implements IUserDao {
     @Override
     public String findNameById(long id) {
         String hql = "select username from User where id=?";
-        Query query=getSession().createQuery(hql).setParameter(0, id);
+        Query query=getSession().createQuery(hql).setLong(0, id);
         String result = (String)query.uniqueResult();
         return result;
     }
