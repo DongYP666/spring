@@ -18,7 +18,7 @@ import java.util.List;
 public class UserController {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("config/datasource.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         UserService service = context.getBean(UserService.class);
 

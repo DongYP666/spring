@@ -1,4 +1,4 @@
-package com.ecworking.init.dao;
+package com.ecworking.init.mapper;
 
 import com.ecworking.init.entity.User;
 
@@ -12,8 +12,7 @@ import java.util.List;
  * @Author by dongyp
  * @date on 2018/3/24
  */
-public interface IUserDao {
-
+public interface UserMapper {
     List<User> findAll();
 
     User findById(int id);
