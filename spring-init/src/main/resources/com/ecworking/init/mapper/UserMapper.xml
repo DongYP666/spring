@@ -15,6 +15,14 @@
         <result property="birthday" column="birthday"/>
     </resultMap>
 
+    <insert id="insert" parameterType="com.ecworking.init.entity.User">
+        INSERT INTO `user` (username,password,email,birthday) VALUES (#{username},#{password},#{email},#{birthday});
+    </insert>
+
+    <update id="update" parameterType="com.ecworking.init.entity.User">
+        UPDATE `user` SET username=#{username},password=#{password},email=#{email},birthday=#{birthday} WHERE id=#{id};
+    </update>
+
     <select id="findAll" resultMap="userMap">
         SELECT * FROM `user`;
     </select>

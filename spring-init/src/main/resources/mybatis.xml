@@ -23,7 +23,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="config/UserMapper.xml"/>
+        <mapper resource="com/ecworking/init/mapper/UserMapper.xml"/>
     </mappers>
 
 </configuration>

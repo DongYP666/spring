@@ -19,6 +19,16 @@ import java.sql.Connection;
  */
 public class MybatisUtils {
 
+    /**
+     * 通过Reader对象读取Mybatis映射文件
+     * 通过SqlSessionFactoryBuilder对象创建SqlSessionFactory对象
+     * 获取当前线程的SQLSession
+     * 事务默认开启
+     * 通过SQLSession读取映射文件中的操作编号，从而读取SQL语句
+     * 提交事务
+     * 关闭资源
+     */
+
     private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<SqlSession>();
 
     private static SqlSessionFactory sqlSessionFactory;
@@ -27,7 +37,7 @@ public class MybatisUtils {
     static{
         try {
             //加载mybatis.xml配置文件
-            Reader reader = Resources.getResourceAsReader("/config/mybatis.xml");
+            Reader reader = Resources.getResourceAsReader("mybatis.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
         } catch (IOException e) {
             e.printStackTrace();

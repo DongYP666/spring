@@ -14,7 +14,11 @@ import java.util.List;
  */
 public interface IUserDao {
 
+    void insert(User user);
+
+    void update(User user);
+
     List<User> findAll();
 
-    User findById(int id);
+    User findById(long id);
 }

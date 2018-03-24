@@ -13,6 +13,11 @@ import java.util.List;
  * @date on 2018/3/24
  */
 public interface UserMapper {
+
+    int insert(User user);
+
+    int update(User user);
+
     List<User> findAll();
 
     User findById(int id);
