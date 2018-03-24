@@ -1,10 +1,10 @@
-package dao.impl;
+package com.ecworking.init.dao.impl;
 
-import dao.IUserDao;
-import entity.User;
-import handler.BeanHandler;
-import handler.BeanListHandler;
-import handler.ResultSetHandler;
+import com.ecworking.init.dao.IUserDao;
+import com.ecworking.init.entity.User;
+import com.ecworking.init.handler.BeanHandler;
+import com.ecworking.init.handler.BeanListHandler;
+import com.ecworking.init.handler.ResultSetHandler;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

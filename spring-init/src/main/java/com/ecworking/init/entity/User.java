@@ -1,4 +1,4 @@
-package entity;
+package com.ecworking.init.entity;
 
 import java.util.Date;
 

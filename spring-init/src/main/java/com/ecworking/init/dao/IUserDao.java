@@ -1,8 +1,7 @@
-package dao;
+package com.ecworking.init.dao;
 
-import entity.User;
+import com.ecworking.init.entity.User;
 
-import java.sql.SQLException;
 import java.util.List;
 
 /**

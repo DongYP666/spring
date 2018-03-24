@@ -1,4 +1,4 @@
-package simple;
+package com.ecworking.init.simple;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

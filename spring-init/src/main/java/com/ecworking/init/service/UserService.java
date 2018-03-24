@@ -1,7 +1,7 @@
-package service;
+package com.ecworking.init.service;
 
-import dao.IUserDao;
-import entity.User;
+import com.ecworking.init.dao.IUserDao;
+import com.ecworking.init.entity.User;
 
 import java.util.List;
 

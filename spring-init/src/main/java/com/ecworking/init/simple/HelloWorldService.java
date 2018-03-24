@@ -1,4 +1,4 @@
-package simple;
+package com.ecworking.init.simple;
 
 /**
  * Copyright (C), 2014-2015, 深圳云集智造系统技术有限公司
