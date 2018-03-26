@@ -1,7 +1,8 @@
 package com.ecworking.init.service;
 
-import com.ecworking.init.dao.IUserDao;
 import com.ecworking.init.entity.User;
+import com.ecworking.init.mapper.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -15,17 +16,14 @@ import java.util.List;
  */
 public class UserService {
 
-    private IUserDao userDao;
-
-    public void setUserDao(IUserDao userDao) {
-        this.userDao = userDao;
-    }
+    @Autowired
+    private UserMapper userMapper;
 
     public User findOne(int id){
-        return userDao.findById(id);
+        return userMapper.findById(id);
     }
 
     public List<User> findAll() {
-        return userDao.findAll();
+        return userMapper.findAll();
     }
 }

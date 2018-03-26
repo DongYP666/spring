@@ -1,9 +1,9 @@
 package com.ecworking.init.controller;
 
 import com.ecworking.init.entity.User;
+import com.ecworking.init.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import com.ecworking.init.service.UserService;
 
 import java.util.List;
 

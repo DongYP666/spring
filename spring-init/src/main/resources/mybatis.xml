@@ -2,28 +2,27 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!-- 加载类路径下的属性文件 -->
-    <properties resource="config/db.properties"/>
+    <!--&lt;!&ndash; 加载类路径下的属性文件 &ndash;&gt;-->
+    <!--<properties resource="config/db.properties"/>-->
 
-    <!-- 设置一个默认的连接环境信息 -->
-    <environments default="mysql_developer">
-        <!-- 连接环境信息，取一个任意唯一的名字 -->
-        <environment id="mysql_developer">
-            <!-- mybatis使用jdbc事务管理方式 -->
-            <transactionManager type="jdbc"/>
-            <!-- mybatis使用连接池方式来获取连接 -->
-            <dataSource type="pooled">
-                <!-- 配置与数据库交互的4个必要属性 -->
-                <property name="driver" value="${jdbc.driverClass}"/>
-                <property name="url" value="${jdbc.jdbcUrl}"/>
-                <property name="username" value="${jdbc.username}"/>
-                <property name="password" value="${jdbc.password}"/>
-            </dataSource>
-        </environment>
-    </environments>
+    <!--&lt;!&ndash; 设置一个默认的连接环境信息 &ndash;&gt;-->
+    <!--<environments default="mysql_developer">-->
+        <!--&lt;!&ndash; 连接环境信息，取一个任意唯一的名字 &ndash;&gt;-->
+        <!--<environment id="mysql_developer">-->
+            <!--&lt;!&ndash; mybatis使用jdbc事务管理方式 &ndash;&gt;-->
+            <!--<transactionManager type="jdbc"/>-->
+            <!--&lt;!&ndash; mybatis使用连接池方式来获取连接 &ndash;&gt;-->
+            <!--<dataSource type="pooled">-->
+                <!--&lt;!&ndash; 配置与数据库交互的4个必要属性 &ndash;&gt;-->
+                <!--<property name="driver" value="${jdbc.driverClass}"/>-->
+                <!--<property name="url" value="${jdbc.jdbcUrl}"/>-->
+                <!--<property name="username" value="${jdbc.username}"/>-->
+                <!--<property name="password" value="${jdbc.password}"/>-->
+            <!--</dataSource>-->
+        <!--</environment>-->
+    <!--</environments>-->
 
-    <mappers>
-        <mapper resource="com/ecworking/init/mapper/UserMapper.xml"/>
-    </mappers>
-
+    <!--<mappers>-->
+        <!--<mapper resource="com/ecworking/init/mapper/UserMapper.xml"/>-->
+    <!--</mappers>-->
 </configuration>
